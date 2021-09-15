@@ -1,0 +1,3 @@
+dna = "ACTGATCGATTACGTATAGTATTTGCTATCATACATATATATCGATGCGTTCAT"
+Complementary = dna.replace('A','t').replace('T','a').replace('G','c').replace('C','g') #Make use of the fact that Python discriminate between upper and lowercase letters
+print(Complementary.upper()) #Convert all lowercase to uppercase
