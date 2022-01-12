@@ -1,0 +1,46 @@
+def complement_base(base): #This part gives Python the logic to convert complement bases
+    """Returns the Watson-Crick complement of a base."""
+    
+    if base in 'Aa':
+        return 'T'
+    elif base in 'Tt':
+        return 'A'
+    elif base in 'Gg':
+        return 'C'
+    else:
+        return 'G'
+
+def reverse_complement(seq):
+    """Compute reverse complement of a sequence."""
+    
+    # Initialize reverse complement
+    rev_seq = '' #rev_seq here is left blank (for bases to be added later on)
+    
+    # Loop through and populate list with reverse complement
+    for base in reversed(seq):
+        rev_seq += complement_base(base) #Here, for each base in the reversed sequence of seq, you take the complement base defined earlier on and add to the blank rev_seq
+        
+    return rev_seq
+
+def display_complements(seq):
+    """Print sequence above its reverse complement."""
+        
+    # Compute the reverse complement
+    rev_comp = reverse_complement(seq) #Assign the reverse_complement(seq) to a new variable called rev_comp
+    
+    # Print template
+    print(seq)
+    
+    # Print "base pairs"
+    for base in seq:
+        print('|', end='') #For each base in the seq, print 1 | in 1 line with the distance between each | is equal to ''
+    
+    # Print final newline character after base pairs
+    print()
+            
+    # Print reverse complement
+    for base in reversed(rev_comp):
+        print(base, end='')
+        
+    # Print final newline character
+    print()
